@@ -1,26 +1,21 @@
 #include "main.h"
 
 /**
-*
-* _islower - function to check for lowercase character
-*
-* @c:  is the int that will use for the argument of the function
-*
-* Return: 0
+* print_number - prints an integer
+* @n: tracked var
 */
-int _islower(int c)
 
+void print_number(int n)
 {
-		if (c >= 'a' && c <= 'z')
-		{
-			return (1);
-		}
-		else
-			return (0);
-	if (c >= 'a' && c <= 'z')
-	{
-		return (1);
-	}
-	else
-		return (0);
+unsigned int x = n;
+if (n < 0)
+{
+_putchar(45);
+x = -x;
+}
+if ((x / 10) > 0)
+{
+print_number(x / 10);
+}
+_putchar((x % 10) + 48);
 }
