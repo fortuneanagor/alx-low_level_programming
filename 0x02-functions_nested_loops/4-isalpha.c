@@ -1,21 +1,16 @@
 #include "main.h"
 
 /**
-* print_number - prints an integer
-* @n: tracked var
+* _isalpha - function to check if c is a letter, lowercase or uppercase
+* @c: is the int that will use for the argument of the function
+* Return: 0
 */
-
-void print_number(int n)
+int _isalpha(int c)
 {
-unsigned int x = n;
-if (n < 0)
+if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 {
-_putchar(45);
-x = -x;
+return (1);
 }
-if ((x / 10) > 0)
-{
-print_number(x / 10);
-}
-_putchar((x % 10) + 48);
+else
+return (0);
 }
