@@ -1,0 +1,11 @@
+#include "main.h"
+/**
+ *
+ * strncpy
+ *
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+	
+	return 0;
+}
