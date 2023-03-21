@@ -1,10 +1,13 @@
 #include <stdio.h>
+#define NAME __FILE__
+
 /**
- * This program will print the current file nane
- *
- */
-int  main ()
+	* main - Prints name of file
+	* Return: Always 0(success)
+	*/
+
+int main(void)
 {
-	printf("%s\n", __FILE__);
-	return 0;
+	printf("%s\n", NAME);
+	return (0);
 }
