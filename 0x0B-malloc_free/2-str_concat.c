@@ -1,39 +1,41 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 /**
- * alloc_grid - Main Enry
- * @width: input
- * @height: input
+ * str_concat - Main Entry
+ * @s1: input
+ * @s2: input
  * Return: 0
  */
-int **alloc_grid(int width, int height)
+char *str_concat(char *s1, char *s2)
 {
-	int **grid;
-	int i, j;
+	unsigned int size1 = 0, size2 = 0;
+	char *ptr, *ret;
 
-	if (width <= 0 || height <= 0)
+	ptr = s1;
+	if (s1)
+		while (*ptr++)
+			size1++;
+	else
+		s1 = "";
+
+	ptr = s2;
+	if (s2)
+		while (*ptr++)
+			size2++;
+	else
+		s2 = "";
+
+	ret = malloc(size1 + size2 + 1);
+	if (!ret)
 		return (NULL);
 
-	grid = malloc(height * sizeof(int *));
-	if (grid == NULL)
-		return (NULL);
+	ptr = ret;
+	while (*s1)
+		*ptr++ = *s1++;
+	while (*s2)
+		*ptr++ = *s2++;
+	*ptr = 0;
 
-	for (i = 0; i < height; i++)
-	{
-		grid[i] = malloc(width * sizeof(int));
-		if (grid[i] == NULL)
-		{
-			while (i >= 0)
-				free(grid[i--]);
-			free(grid);
-			return (NULL);
-		}
-
-
-		for (j = 0; j < width; j++)
-			grid[i][j] = 0;
-	}
-
-	return (grid);
+	return (ret);
 }
